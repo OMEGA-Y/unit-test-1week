@@ -1,47 +1,35 @@
-
-import org.junit.Before;
+import junit.framework.TestCase;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
-
-public class CustomCalculatorTest {
+public class CustomCalculatorTest extends TestCase {
 
     private CustomCalculator customCalculator;
 
-    //더하기 테스트 작성
     @Test
-    public void add() {
+    public void testAdd(){
         customCalculator = new CustomCalculator();
-        int result = customCalculator.add(10,15);
-        /* 이곳에 테스트 코드를 작성하세요. */
-        System.out.println("result :: " + result);
+        int result = customCalculator.add(10,10);
+        assertTrue(result == 20);
     }
 
-    //빼기 테스트 작성
     @Test
-    public void subtract() {
+    public void testSubtract(){
         customCalculator = new CustomCalculator();
-        int result = customCalculator.subtract(23,10);
-        /* 이곳에 테스트 코드를 작성하세요. */
-        System.out.println("result :: " + result);
+        int result = customCalculator.subtract(10,2);
+        assertTrue(result == 8);
     }
 
-    //곱하기 테스트 작성
     @Test
-    public void multiply() {
+    public void testMultiply(){
         customCalculator = new CustomCalculator();
-        int result = customCalculator.multiply(5,9);
-        /* 이곳에 테스트 코드를 작성하세요. */
-        System.out.println("result :: " + result);
+        int result = customCalculator.multiply(10,2);
+        assertTrue(result == 20);
     }
 
-    //나누기 테스트 작성
     @Test
-    public void divide() {
+    public void testDivide(){
         customCalculator = new CustomCalculator();
         int result = customCalculator.divide(25,5);
-        /* 이곳에 테스트 코드를 작성하세요. */
-        System.out.println("result :: " + result);
+        assertTrue(result == 5);
     }
 }
